@@ -13,3 +13,7 @@ cd linux-x64-default/bin
 
 python exploit.py 127.0.0.1 8887 # 触发segmentation fault
 ```
+
+漏洞位置：`src/http.c:457`的`wfree(wp->path);`，即`free()`
+
+测试平台：Ubuntu 16.04.6 LTS 32位和64位
